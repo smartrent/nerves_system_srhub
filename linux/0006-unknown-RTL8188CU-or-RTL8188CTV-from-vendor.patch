@@ -1,0 +1,23 @@
+From f9184a6d1e19cb59ca7340e1c908c816beaf2e3b Mon Sep 17 00:00:00 2001
+From: Jon Carstens <jjcarstens@me.com>
+Date: Thu, 26 May 2022 13:17:33 -0600
+Subject: [PATCH] unknown RTL8188CU or RTL8188CTV from vendor
+
+---
+ drivers/net/wireless/realtek/rtlwifi/rtl8192cu/sw.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/sw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/sw.c
+index b53daf1b2..7a25086a9 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/sw.c
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/sw.c
+@@ -308,6 +308,7 @@ static const struct usb_device_id rtl8192c_usb_ids[] = {
+ 	{RTL_USB_DEVICE(0x0df6, 0x0077, rtl92cu_hal_cfg)}, /*Sitecom-WLA2100V2*/
+ 	{RTL_USB_DEVICE(0x0eb0, 0x9071, rtl92cu_hal_cfg)}, /*NO Brand - Etop*/
+ 	{RTL_USB_DEVICE(0x4856, 0x0091, rtl92cu_hal_cfg)}, /*NetweeN - Feixun*/
++	{RTL_USB_DEVICE(0x0bff, 0x8160, rtl92cu_hal_cfg)}, /* NO Brand - RTL8188CTV */
+ 	/* HP - Lite-On ,8188CUS Slim Combo */
+ 	{RTL_USB_DEVICE(0x103c, 0x1629, rtl92cu_hal_cfg)},
+ 	{RTL_USB_DEVICE(0x13d3, 0x3357, rtl92cu_hal_cfg)}, /* AzureWave */
+-- 
+2.25.1

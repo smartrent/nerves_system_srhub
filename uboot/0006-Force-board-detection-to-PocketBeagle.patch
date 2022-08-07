@@ -1,0 +1,161 @@
+From 167aaef531ac72d858a020b1769da9babcba79ee Mon Sep 17 00:00:00 2001
+From: Frank Hunleth <fhunleth@troodon-software.com>
+Date: Wed, 28 Feb 2018 09:31:42 -0500
+Subject: [PATCH] Force board detection to PocketBeagle
+
+This makes programming the EEPROM an optional step.
+---
+ board/ti/am335x/board.h        | 35 +++++++++++++++++------------------
+ board/ti/common/board_detect.c | 15 +++++++++++++++
+ 2 files changed, 32 insertions(+), 18 deletions(-)
+
+diff --git a/board/ti/am335x/board.h b/board/ti/am335x/board.h
+index df64fca..b8d8ff4 100644
+--- a/board/ti/am335x/board.h
++++ b/board/ti/am335x/board.h
+@@ -41,63 +41,63 @@ struct am335x_cape_eeprom_id {
+ 
+ static inline int board_is_beaglelogic(void)
+ {
+-	return board_ti_is("A335BLGC");
++	return 0;
+ }
+ 
+ static inline int board_is_bone(void)
+ {
+-	return board_ti_is("A335BONE");
++	return 0;
+ }
+ 
+ static inline int board_is_bone_lt(void)
+ {
+-	return board_ti_is("A335BNLT");
++	return 0;
+ }
+ 
+ static inline int board_is_pb(void)
+ {
+-	return board_ti_is("A335PBGL");
++	return 1;
+ }
+ 
+ static inline int board_is_bbbw(void)
+ {
+-	return board_is_bone_lt() && !strncmp(board_ti_get_rev(), "BW", 2);
++	return 0;
+ }
+ 
+ static inline int board_is_blue(void)
+ {
+-	return board_is_bone_lt() && !strncmp(board_ti_get_rev(), "BLA", 3);
++	return 0;
+ }
+ 
+ static inline int board_is_bbg1(void)
+ {
+-	return board_is_bone_lt() && !strncmp(board_ti_get_rev(), "BBG1", 4);
++	return 0;
+ }
+ 
+ static inline int board_is_bone_lt_enhanced(void)
+ {
+-	return board_is_bone_lt() && !strncmp(board_ti_get_rev(), "SE", 2);
++	return 0;
+ }
+ 
+ static inline int board_is_m10a(void)
+ {
+-	return board_is_bone_lt() && !strncmp(board_ti_get_rev(), "M10A", 4);
++	return 0;
+ }
+ 
+ //Element14 BeagleBone Black Industrial:
+ static inline int board_is_e14bbbi(void)
+ {
+-	return board_is_bone_lt() && !strncmp(board_ti_get_rev(), "EIA0", 4);
++	return 0;
+ }
+ 
+ static inline int board_is_marsboard(void)
+ {
+-	return board_is_bone_lt() && !strncmp(board_ti_get_rev(), "00A5", 4);
++	return 0;
+ }
+ 
+ static inline int board_is_os00(void)
+ {
+-	return board_is_bone_lt() && !strncmp(board_ti_get_rev(), "OS00", 4);
++	return 0;
+ }
+ 
+ static inline int board_is_beaglebonex(void)
+@@ -107,28 +107,27 @@ static inline int board_is_beaglebonex(void)
+ 
+ static inline int board_is_evm_sk(void)
+ {
+-	return board_ti_is("A335X_SK");
++	return 0;
+ }
+ 
+ static inline int board_is_idk(void)
+ {
+-	return !strncmp(board_ti_get_config(), "SKU#02", 6);
++	return 0;
+ }
+ 
+ static inline int board_is_gp_evm(void)
+ {
+-	return board_ti_is("A33515BB");
++	return 0;
+ }
+ 
+ static inline int board_is_evm_15_or_later(void)
+ {
+-	return (board_is_gp_evm() &&
+-		strncmp("1.5", board_ti_get_rev(), 3) <= 0);
++	return 0;
+ }
+ 
+ static inline int board_is_icev2(void)
+ {
+-	return board_ti_is("A335_ICE") && !strncmp("2", board_ti_get_rev(), 1);
++	return 0;
+ }
+ 
+ /*
+diff --git a/board/ti/common/board_detect.c b/board/ti/common/board_detect.c
+index c475f10..ec2e518 100644
+--- a/board/ti/common/board_detect.c
++++ b/board/ti/common/board_detect.c
+@@ -196,6 +196,20 @@ already_set:
+ 	return 0;
+ }
+ 
++#if 1
++int __maybe_unused ti_i2c_eeprom_am_get(int bus_addr, int dev_addr)
++{
++	/* Hardcode the EEPROM data to a PocketBeagle */
++	struct ti_common_eeprom *ep = TI_EEPROM_DATA;
++	ep->header = TI_EEPROM_HEADER_MAGIC;
++	strlcpy(ep->name, "A335PBGL", TI_EEPROM_HDR_NAME_LEN + 1);
++	strlcpy(ep->version, "00A2", TI_EEPROM_HDR_REV_LEN + 1);
++	ep->version[0] = 0x0;
++	ep->serial[0] = 0x0;
++	ep->config[0] = 0x0;
++	return 0;
++}
++#else
+ int __maybe_unused ti_i2c_eeprom_am_get(int bus_addr, int dev_addr)
+ {
+ 	int rc;
+@@ -241,6 +255,7 @@ int __maybe_unused ti_i2c_eeprom_am_get(int bus_addr, int dev_addr)
+ 
+ 	return 0;
+ }
++#endif
+ 
+ int __maybe_unused ti_i2c_eeprom_dra7_get(int bus_addr, int dev_addr)
+ {
+-- 
+2.7.4
+
