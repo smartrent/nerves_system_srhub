@@ -1,21 +1,21 @@
 # Nerves System for the SmartRent Hub (OSS)
 
 This is the base Nerves System configuration for the [SmartRent
-Hub](http://smartrent.com/) used with public trainings and open source purposes.
+Hub](http://smartrent.com/) used for public trainings and open source purposes.
 
 ![SmartRent Hub image](assets/images/smartrent-hub.jpg)
 
-| Feature              | Description                     |
-| -------------------- | ------------------------------- |
-| CPU                  | 1 GHz ARM Cortex-A8             |
-| Memory               | 512 MB DRAM                     |
-| Storage              | MicroSD                         |
-| Linux kernel         | 5.10 w/ BBB patches             |
-| IEx terminal         | ttyS0 via the FTDI connector    |
-| UART                 | Z-Wave @ttyS4                   |
+| Feature              | Description                        |
+| -------------------- | ---------------------------------- |
+| CPU                  | 1 GHz ARM Cortex-A8                |
+| Memory               | 512 MB DRAM                        |
+| Storage              | MicroSD                            |
+| Linux kernel         | 5.10 w/ BBB patches                |
+| IEx terminal         | ttyS0 via the FTDI connector       |
+| UART                 | LTE @ttyS1, Z-Wave @ttyS4          |
 | USB                  | Two host interfaces - LTE and WiFi |
-| I2C                  | i2c-1 to PMIC to ATECC608A      |
-| Ethernet             | No                              |
+| I2C                  | i2c-1 to PMIC to ATECC608A         |
+| Ethernet             | No                                 |
 | LEDs                 | Red/green LEDs exposed via /sys/class/leds |
 
 ## Console access
