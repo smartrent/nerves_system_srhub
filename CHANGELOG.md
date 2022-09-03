@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.25.1
+
+* Updates
+  * Add iptables options so that srhub can be used as a WiFi hotspot
+
 ## v0.25.0
 
 Initial release
