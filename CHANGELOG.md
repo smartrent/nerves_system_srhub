@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.25.2
+
+* Updated dependencies
+  * [nerves_system_br v1.20.5](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.20.5)
+  * [Erlang/OTP 25.0.4](https://erlang.org/download/OTP-25.0.4.README)
+
 ## v0.25.1
 
 * Updates
@@ -12,5 +18,5 @@ Initial release
 * Dependencies
   * [nerves_system_br v1.20.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.20.4)
   * [Buildroot 2022.05](http://lists.busybox.net/pipermail/buildroot/2022-June/644349.html)
-  * [Erlang/OTP 25.0.3](https://erlang.org/download/OTP-25.0.3README)
+  * [Erlang/OTP 25.0.3](https://erlang.org/download/OTP-25.0.3.README)
 
