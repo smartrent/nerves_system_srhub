@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.26.0
+
+* Updated dependencies
+  * [nerves_system_br v1.21.0](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.21.0)
+  * [Buildroot 2022.08](http://lists.busybox.net/pipermail/buildroot/2022-September/650852.html)
+  * [Erlang/OTP 25.1](https://erlang.org/download/OTP-25.1.README)
+
 ## v0.25.3
 
 * Updated dependencies
