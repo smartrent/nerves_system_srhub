@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.26.2
+
+* Updated dependencies
+  * [nerves_system_br v1.21.2](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.21.2)
+  * [Erlang/OTP 25.1.2](https://erlang.org/download/OTP-25.1.2.README)
+
 ## v0.26.1
 
 * Updated dependencies
