@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.27.0
+
+This is a Buildroot version update that appears to mostly contain bug and
+security fixes. It should be a low risk upgrade.
+
+* Updated dependencies
+  * [nerves_system_br v1.22.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.22.1)
+  * [Buildroot 2022.11](http://lists.busybox.net/pipermail/buildroot/2022-December/656980.html)
+  * GCC 12.2
+
 ## v0.26.3
 
 * Changes
