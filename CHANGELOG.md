@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.27.1
+
+This is a bug fix and Erlang version bump from 25.2 to 25.2.3. It should be a
+low risk upgrade.
+
+* Fixes
+  * Set Erlang crash dump timer to 5 seconds, so if an Erlang crash dump does
+    happen, it will run for at most 5 seconds. See erlinit.conf.
+
+* Updated dependencies
+  * [nerves_system_br v1.22.3](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.22.3)
+  * [Buildroot 2022.11.1](https://lore.kernel.org/buildroot/87ilh4dvax.fsf@dell.be.48ers.dk/T/#u)
+
 ## v0.27.0
 
 This is a Buildroot version update that appears to mostly contain bug and
