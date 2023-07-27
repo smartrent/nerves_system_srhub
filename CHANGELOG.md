@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.28.1
+
+This is a bug and security fix update. It should be a low risk upgrade.
+
+* Fixes
+  * Fix CTRL+R over ssh
+
+* Updated dependencies
+  * [nerves_system_br v1.23.2](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.23.2)
+  * [Buildroot 2023.02.2](https://lore.kernel.org/buildroot/87y1je6wva.fsf@48ers.dk/T/)
+
 ## v0.28.0
 
 This is a major update that brings in Erlang/OTP 26 and Buildroot 2023.02.2.
