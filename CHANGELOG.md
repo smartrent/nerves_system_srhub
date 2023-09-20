@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.28.2
+
+* Updated dependencies
+  * [nerves_system_br v1.23.3](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.23.3)
+
 ## v0.28.1
 
 This is a bug and security fix update. It should be a low risk upgrade.
