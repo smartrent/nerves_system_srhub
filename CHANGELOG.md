@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.30.1
+
+This is a security/bug fix update.
+
+ Package updates
+  * [Erlang/OTP 26.2.1](https://erlang.org/download/OTP-26.2.1.README)
+  * [nerves_heart 2.3.0](https://github.com/nerves-project/nerves_heart/releases/tag/v2.3.0)
+
 ## v0.30.0
 
 This is a major Buildroot and toolchain update.
