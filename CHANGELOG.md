@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.32.1
+
+This is a security/bug fix update.
+
+* Package updates
+  * [Erlang/OTP 26.2.5](https://erlang.org/download/OTP-26.2.5.README)
+  * [Buildroot 2024.02.1](https://lore.kernel.org/buildroot/87jzlp9u5e.fsf@48ers.dk/T/)
+
 ## v0.32.0
 
 This is a major Buildroot update.
