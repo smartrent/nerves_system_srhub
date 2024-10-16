@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.13.2
+
+* Updated dependencies
+  * [nerves_system_br v1.29.0](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.29.0)
+  * [Buildroot 2024.08](https://lore.kernel.org/buildroot/87frqcj3nw.fsf@dell.be.48ers.dk/T/)
+  * [Erlang/OTP 27.1.1](https://erlang.org/download/OTP-27.1.1.README)
+
 ## v0.33.1
 
 This is a security/bug fix update.
