@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.35.0
+
+* Updated dependencies
+  * [Erlang/OTP 27.3](https://erlang.org/download/OTP-27.3.README.md)
+  * [Buildroot 2024.11.2](https://lore.kernel.org/buildroot/87v7t3nyls.fsf@dell.be.48ers.dk/T/)
+
 ## v0.34.1
 
 This is a security/bug fix update.
