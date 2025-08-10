@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.36.2
+
+This is a security/bug fix release.
+
+* Package updates
+  * [nerves_system_br v1.31.5](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.31.5)
+
+* Important derived package updates
+  * [Erlang/OTP 27.3.4.2](https://erlang.org/download/OTP-27.3.4.2.README.md)
+  * [fwup 1.13.2](https://github.com/fwup-home/fwup/releases/tag/v1.13.2)
+
 ## v0.36.1
 
 This is a security/bug fix release.
